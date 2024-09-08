@@ -31,7 +31,7 @@ be located anywhere in the regions listed
 
 Once the deployment is complete, you can add a specific region to the Vercel
 project settings by following this
-[tutorial](https://vercel.com/docs/functions/configuring-functions/region#setting-your-default-region).
+[tutorial](https://vercel.com/docs/functions/configuring-functions/region#setting-your-default-region). Do not forget to redeploy afterwards so that the changes are taken into account.
 
 ## How to use
 
