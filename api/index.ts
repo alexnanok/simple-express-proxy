@@ -1,5 +1,6 @@
 import axios from 'axios';
 import express, { Request as ExpressRequest, Response as ExpressResponse } from 'express';
+import cors from 'cors';
 
 const VERBOSE = true;
 
@@ -25,9 +26,10 @@ const DEFAULT_RES_HEADERS = {
 
 const app = express();
 
+app.use(cors());
+
 app.all('/*', async (req: ExpressRequest, res: ExpressResponse) => {
-    // Extraire l'URL de la requête
-    const url = req.path.substring(1); // Enlève le premier caractère '/' de la route
+    const url = req.path.substring(1);
 
     // test whether the URL provided as a path is valid or not
     try {
@@ -103,7 +105,7 @@ app.all('/*', async (req: ExpressRequest, res: ExpressResponse) => {
     }
 });
 
-const PORT = 3000;
+const PORT = 3008;
 app.listen(PORT, () => {
     if (VERBOSE) console.log(`Proxy server is running on port ${PORT}!`);
 });
