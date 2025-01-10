@@ -20,7 +20,7 @@ export default async function handler(req, res) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.API_TOKEN}`
+                'Authorization': `${process.env.API_TOKEN}`
             },
             body: JSON.stringify(req.body)
         });
