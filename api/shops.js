@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        // Solicitud a la API de Mirakl
+        // Hacer la solicitud a la API de Mirakl
         const response = await fetch('https://pccomponentes-prod.mirakl.net/api/shops', {
             method: 'POST',
             headers: {
@@ -28,7 +28,6 @@ export default async function handler(req, res) {
         const data = await response.json();
         res.status(response.status).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'Error al enviar la solicitud a la API de Mirakl' });
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 }
-
