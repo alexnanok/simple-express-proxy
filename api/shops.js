@@ -20,7 +20,8 @@ export default async function handler(req, res) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${process.env.API_TOKEN}`
+                'Authorization': `${process.env.API_TOKEN}`,
+                'Host': 'pccomponentes-prod.mirakl.net'
             },
             body: JSON.stringify(req.body)
         });
